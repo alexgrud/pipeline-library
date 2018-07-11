@@ -111,7 +111,6 @@ def installInfra(master) {
     // Install docker
     if (salt.testTarget(master, 'I@docker:host')) {
         salt.enforceState(master, 'I@docker:host', 'docker.host')
-        salt.cmdRun(master, 'I@docker:host', 'docker ps')
     }
 
     // Install keepalived
